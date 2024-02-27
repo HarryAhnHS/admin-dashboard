@@ -33,7 +33,7 @@ img {
     display: grid;
     height: calc(100vh + 100px);
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 120px 100px auto 100px;
+    grid-template-rows: 120px 40px auto 100px;
 }
 
 /* Sidebar */
@@ -180,18 +180,51 @@ img {
     border-radius: 50%;
 }
 
-
-
-
-
-
-
-
+/* Search and filter bar */
 
 .content-topbar {
     grid-area: 2/2/3/3;
     /* background-color: #fef2f2; */
 }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.search-icon {
+    width: 25px;
+    opacity: 0.4;
+}
+
+.search-bar input {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 1;
+    text-decoration: none;
+    border: 0px;
+    height: 30px;
+
+    font-family: 'Outfit', 'Play', 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    opacity: 0.4;
+    color: #404040;
+}
+
+.sort-dial {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
+}
+
 
 .cards-container {
     grid-area: 3/2/4/3;
@@ -211,15 +244,17 @@ img {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.right-content {
+.trending {
     grid-area: 2/3/4/4;
-    /* background-color: #fef2f2; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 /* Footer */
 .footer {
     grid-area: 4/1/5/4;
-    background-color: #eeeeee;
+    background-color: white;
     color: black;
     padding: 40px;
     display: flex;
