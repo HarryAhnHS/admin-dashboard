@@ -1,6 +1,6 @@
 # admin-dashboard
 
-Rep-rep
+RepMe
 
 Dashboard:
 - Name of Split
@@ -14,5 +14,5 @@ Dashboard:
 
 Search bar, Sort, Filter
 
-Right content - Trending keywords, ?etc. 
+Right content -  Live challenges: Users can participate in challenges such as "30-Day Squat Challenge" or "Bench Press PR Challenge" and share their progress with the community.
 

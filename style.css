@@ -152,7 +152,7 @@ img {
 .header-icon {
     width: 25px;
     transition: all 0.3s;
-    opacity: 0.4;
+    opacity: 0.4
 }
 
 .header-icon:focus, .header-icon:hover {
@@ -202,17 +202,22 @@ img {
 }
 
 .search-bar input {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    /* padding-right: 15px; */
     flex: 1;
     text-decoration: none;
     border: 0px;
     height: 30px;
+    background-color: transparent;
 
     font-family: 'Outfit', 'Play', 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
-    opacity: 0.4;
     color: #404040;
+}
+
+::placeholder {
+    color: rgb(64,64,64,0.4);
+    opacity: 1; /* Firefox */
 }
 
 .sort-dial {
@@ -221,9 +226,15 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    border-radius: 10px;
+    color: rgb(64,64,64,0.4);
+    font-weight: 400;
 }
+
+.sort-direction {
+    width: 30px;
+}
+
+/* Main Article Content */
 
 
 .cards-container {
@@ -244,11 +255,25 @@ img {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.trending {
+/* RHS extra side content */
+
+.challenges-container {
     grid-area: 2/3/4/4;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 10px;
     margin: 10px;
+
+    display: grid;
+    grid-template-rows: 50px 100px 100px 100px 100px 100px;
+    grid-auto-rows: 100px;
+    
+    overflow-y: scroll;
+}
+
+.challenge-card {
+    /* outline: 1px solid black; */
+
+
 }
 
 /* Footer */
