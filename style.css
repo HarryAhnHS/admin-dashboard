@@ -263,7 +263,7 @@ img {
 }
 
 .card-img {
-    grid-area: 1/ 1 / 4 / 2;
+    grid-area: 1 / 1 / 4 / 2;
 }
 
 .card-img > img{
@@ -339,7 +339,7 @@ img {
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     padding-bottom: 15px;
 }
 
@@ -424,24 +424,188 @@ img {
 
 /* RHS extra side content */
 
-.challenges-container {
+.trending-container {
     grid-area: 2/3/4/4;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 10px;
-    margin: 10px;
 
-    display: grid;
-    grid-template-rows: 50px 100px 100px 100px 100px 100px;
-    grid-auto-rows: 100px;
+    display: flex;
+    flex-direction: column;
     
     overflow-y: scroll;
 }
 
-.challenge-card {
-    /* outline: 1px solid black; */
+.trending-head {
+    display: flex;
+}
 
+.trending-title {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.trending-icon {
+    width: 50px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.trending-head h1 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.trending-head p {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Individual trending cards */
+
+.trending-card {
+    height: 120px;
+    margin: 10px 5px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.trending-img {
+    grid-column: 2/3;
+    height: 100%;
+}
+
+.trending-img > img {
+    opacity: 0.7;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.trending-content {
+    grid-column: 1/2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-txt {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.trending-name {
+    font-size: 17px;
+    font-weight: 400;
+
+    margin: 0;
+    text-align: start;
+}
+
+.trending-desc {
+    font-size: 10px;
+    font-weight: 300;
+
+    margin: 0;
+}
+
+.trending-refer {
+    height: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 10px;
+    padding-bottom: 5px;
 
 }
+
+.trending-refer > button {
+    height: 30px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    font-family: 'Outfit', 'Play', 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+/* BUTTON CSS */
+.trending-refer > button  {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.trending-refer > button:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.trending-refer > button:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.trending-refer > button:after {
+  background-color: #FFFFFF;
+}
+
+.trending-refer > button span {
+  z-index: 1;
+  position: relative;
+}
+
 
 /* Footer */
 .footer {

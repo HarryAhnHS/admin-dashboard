@@ -18,7 +18,7 @@ for (i = 0; i < cards.length; i++) {
             <p class="num-ratings">(${cards[i].numRatings})</p>
         </div>
     </div>
-    <div class="card-tags" id="${cards[i].num}"> 
+    <div class="card-tags" id="${cards[i].id}"> 
     </div>
     <div class="card-description">
         ${cards[i].description}
@@ -47,11 +47,9 @@ for (i = 0; i < cards.length; i++) {
 };
 
 // Add tags for each object into respective containe
-
-
 const tagsContainer = document.querySelectorAll(".card-tags");
 tagsContainer.forEach( e => {
-    console.log(cards[e.id-1]);
+    // console.log(cards[e.id-1]);
 
     for (t = 0; t < cards[e.id-1].tags.length; t++) {
         e.innerHTML += `<div class="tag">
@@ -60,3 +58,24 @@ tagsContainer.forEach( e => {
     }
 })
 
+// 4 Trending 
+const trendingContainer = document.querySelector(".trending-container");
+
+for (i = 0; i < trending.length; i++) {
+    trendingContainer.innerHTML += `<div class="trending-card">
+    <div class="trending-content">
+        <div class="trending-txt">
+            <p class="trending-name">${trending[i].name}</p>
+            <p class="trending-desc">${trending[i].votes} Votes</p>
+        </div>
+        <div class="trending-refer">
+            <button><span>Find Out More</span></button>
+        </div>
+    </div>
+    <div class="trending-img">
+        <img src="${trending[i].image}">
+    </div>
+</div>
+
+    `;
+}
