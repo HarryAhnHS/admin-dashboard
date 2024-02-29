@@ -2,7 +2,7 @@ const descriptions = ["Blast! Crunches, swooshing dumbbells, sprinting treadmill
 "Hurdle leapfrog, bench press moonwalk, elliptical disco, jumping jack marathon! Kettlebell salsa, spin cycle rodeo, leg day pirouette, dumbbell opera! Sweaty symphony, treadmill tango, flexing flamenco, resistance band rock! Squat, lunge, crunch! Repeat, repeat, repeat! Victory dance, protein bar waltz, gym exit shimmy!",
 "Turbocharged burpee, skipping rope rap battle, rowing machine rodeo, battle rope boogie! Muscle-up mambo, stair climber salsa, plank party, kettlebell chaos! Cardio ballet, tricep twist, resistance band rumba, gym floor shuffle! Water break jive, cooldown conga, post-workout power nap, dream of gains!"];
 
-var tagsList = ["Bulk", "Cut", "Body Recomposition", "Strength", "Endurance", "Fat-Loss", "Powerlifting","Home Training", "Gym", "Machines", "Dumbell", "BodyWeight", "Progressive Overload", "For Gym Rats"];
+var tagsList = ["Bulk", "Cut", "Body Recomposition", "Strength", "Endurance", "Fat-Loss", "Powerlifting","Home Training", "Gym", "Machines", "Dumbbell", "BodyWeight", "Progressive Overload", "For Gym Rats"];
 
 function randomBetween(min, max, numDecimals) {
     return (Math.random() * (max-min) + min).toFixed(numDecimals);
@@ -35,7 +35,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: '5-Day Bro Split',
@@ -47,7 +47,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Push Pull Legs',
@@ -59,7 +59,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Left-Right Split',
@@ -71,7 +71,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Full Body Goggins Split',
@@ -83,7 +83,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Upper Lower Split',
@@ -95,7 +95,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Full Body Strength-Cardio Split',
@@ -107,7 +107,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Arnold Split',
@@ -119,7 +119,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Push Pull Legs Core',
@@ -131,7 +131,7 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
         name: 'Quick Easy Split',
@@ -143,6 +143,18 @@ const cards = [
         averageDailyHours: `${randomBetween(0,3,1)}`,
         rating: `${randomBetween(3,5,2)}`,
         numRatings: `${randomBetween(3,1000,0)}`,
-        image:'./imgs/cardDisplays/_',
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
+    },
+    {
+        name: 'Daily Weight-Loss Home Training',
+        postUser: '@BusyAndHungry',
+        numDays: 1,
+        description: descriptions[randomBetween(0,2,0)],
+        tags: randomTags(randomBetween(1,5,0)),
+        intensity:'Easy',
+        averageDailyHours: `${randomBetween(0,3,1)}`,
+        rating: `${randomBetween(3,5,2)}`,
+        numRatings: `${randomBetween(3,1000,0)}`,
+        image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
 ];

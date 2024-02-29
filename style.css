@@ -247,12 +247,179 @@ img {
     /* background-color: #fef2f2; */
 }
 
+/* Each Card Layout */
+
 .card {
     border-radius: 10px;
     height: 300px;
     text-align: center;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 90px 150px 60px;
+    
+}
+
+.card-img {
+    grid-area: 1/ 1 / 4 / 2;
+}
+
+.card-img > img{
+    opacity: 0.7;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Card Title + Review Styling */
+
+.card-intro {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    align-items: center;
+}
+
+.card-title {
+    flex: 1;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 15px;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: start;
+}
+
+.card-author {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.card-rating {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-icon {
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating {
+    font-size: 16px;
+}
+
+.num-ratings {
+    font-size: 10px;
+    padding-left: 5px;
+}
+
+
+
+
+/* Card tags */
+.card-tags {
+    grid-area: 1 / 1 / 4 / 2;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+}
+
+.tag {
+    background-color: rgb(64,64,64,0.6);
+    border-radius: 15px;
+    height: 30px;
+    padding: 0px 15px;
+    color: white;
+    font-size: 12px;
+    font-weight: 200;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Desc */
+.card-description {
+    grid-area: 2 / 2 / 3 / 3;
+    overflow: hidden;
+    font-size: 16px;
+    margin: 15px 15px 15px 15px;
+    text-align: start;
+
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    
+}
+
+/* Card stats */
+.card-stats {
+    grid-area: 3 / 2 / 4 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 5px;
+}
+
+.stat {
+    /* outline: 1px solid black; */
+    flex: 1; 
+    border-radius: 15px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat p {
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+}
+
+.stat .stat-icon {
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.intensity {
+    background-color: #6a040f;
+}
+
+.days {
+    background-color: #d00000;
+}
+
+.time {
+    background-color: #e85d04;
 }
 
 /* RHS extra side content */
