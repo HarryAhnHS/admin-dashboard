@@ -26,6 +26,7 @@ function randomTags(numTags) {
 
 const cards = [
     {
+        num: 1,
         name: 'The Arnold Split',
         postUser: '@ArnoldSwartzenegger',
         numDays: 6,
@@ -38,6 +39,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 2,
         name: '5-Day Bro Split',
         postUser: '@ShreddedBro123',
         numDays: 5,
@@ -50,6 +52,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 3,
         name: 'Push Pull Legs',
         postUser: '@WorkSmarter',
         numDays: 3,
@@ -62,6 +65,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 4,
         name: 'Left-Right Split',
         postUser: '@TikTokMemer',
         numDays: 2,
@@ -74,6 +78,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 5,
         name: 'Full Body Goggins Split',
         postUser: '@DavidGoggins',
         numDays: 1,
@@ -86,6 +91,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 6,
         name: 'Upper Lower Split',
         postUser: '@BasicGuy7',
         numDays: 2,
@@ -98,6 +104,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 7,
         name: 'Full Body Strength-Cardio Split',
         postUser: '@HealthyJack33',
         numDays: 2,
@@ -110,6 +117,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 8,
         name: 'Arnold Split',
         postUser: '@WannabeHuge23',
         numDays: 7,
@@ -122,6 +130,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 9,
         name: 'Push Pull Legs Core',
         postUser: '@JoeTheBro',
         numDays: 4,
@@ -134,6 +143,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 10,
         name: 'Quick Easy Split',
         postUser: '@BusySoftwareEngineer',
         numDays: 3,
@@ -146,6 +156,7 @@ const cards = [
         image:`./imgs/card-imgs/${randomBetween(1,12,0)}.jpg`,
     },
     {
+        num: 11,
         name: 'Daily Weight-Loss Home Training',
         postUser: '@BusyAndHungry',
         numDays: 1,
