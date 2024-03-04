@@ -7,8 +7,8 @@ const logoIcon = document.querySelector("#logo-icon");
 
 function toggleSidebar() {
     if (sidebar.classList.contains("opened")) {
-        sidebar.style['width'] = '75px';
-        container.style['grid-template-columns'] = '70px 3fr 1fr';
+        sidebar.style['width'] = '55px';
+        container.style['grid-template-columns'] = '55px 3fr 1fr';
         
         sidebarText.forEach( text => {
             text.classList.add("hidden")

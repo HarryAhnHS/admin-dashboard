@@ -68,7 +68,7 @@ img {
     height: 50px;
     box-sizing: border-box;
     padding-top: 5px;
-    padding-left: 15px;
+    padding-left: 10px;
     padding-bottom: 5px;
 }
 
@@ -95,7 +95,7 @@ img {
 }
 
 #logo-icon {
-    width: 50px;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,7 +118,7 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 25px;
+    padding-left: 15px;
     transition: all 0.1s;
 }
 
@@ -172,8 +172,8 @@ img {
 
 .header-icon-bundle {
     /* outline: solid black 1px; */
-    width: 100px;
-    padding-right: 15px;
+    width: 50px;
+    padding-right: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -181,7 +181,7 @@ img {
 }
 
 .header-icon {
-    width: 25px;
+    width: 22px;
     transition: all 0.3s;
     opacity: 0.4
 }
@@ -191,10 +191,10 @@ img {
 } 
 
 .user-bundle {
-    width: 180px;
-    padding-left: 15px;
+    width: 145px;
+    padding-left: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -202,6 +202,7 @@ img {
     color: #404040;
     font-size: 18px;
     font-weight: 300;
+    padding-right: 10px;
 }
 
 #user-pp {
@@ -244,6 +245,9 @@ img {
     font-family: 'Outfit', 'Play', 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     color: #404040;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 ::placeholder {
@@ -273,7 +277,7 @@ img {
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
     padding: 15px;
     /* background-color: #fef2f2; */
@@ -381,17 +385,24 @@ img {
     z-index: 0;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
     padding-bottom: 15px;
+
+    min-width: 0;
 }
 
 .tag {
     background-color: rgb(64,64,64,0.6);
     border-radius: 15px;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    min-width: 0;
     height: 30px;
-    padding: 0px 15px;
+
     color: white;
     font-size: 12px;
     font-weight: 200;
@@ -400,6 +411,9 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Card Desc */
@@ -773,4 +787,45 @@ img {
 
 }
 
+/* SE */
+@media only screen and (max-width: 520px) {
+    /* Header and search bar */
+    .search-bar input {
+        padding-right: 30px;
+    }
 
+    .header p {
+        font-size: 22px;
+    }
+
+    .user-bundle {
+        width: 55px;
+        padding-left: 15px
+    }
+
+    #user-name {
+        display: none;
+    }
+    
+    /* Article overflow */
+
+    /* .card-author {
+        font-size: 11px;
+        font-weight: 400;
+        margin: 0;
+    } */
+
+    .card {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .tag {
+        font-size: 9px;
+    }
+
+    
+
+
+
+
+}
