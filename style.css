@@ -95,11 +95,16 @@ img {
 }
 
 #logo-icon {
-    width: 40px;
+    width: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 15px;
+    padding-right: 5px;
+}
+
+#logo-icon:hover, #logo-icon:focus {
+    transition: all 0.5s;
+    transform: rotateY(360deg);
 }
 
 /* Sidebar menu */
