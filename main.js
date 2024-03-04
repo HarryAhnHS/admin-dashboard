@@ -1,3 +1,36 @@
+// Sidebar Open Close
+const sidebar = document.querySelector(".sidebar");
+const container = document.querySelector(".container");
+const sidebarToggle = document.querySelector(".openbtn");
+const sidebarText = document.querySelectorAll(".sidebarText");
+
+function toggleSidebar() {
+    if (sidebar.classList.contains("opened")) {
+        sidebar.style['width'] = '75px';
+        container.style['grid-template-columns'] = '70px 3fr 1fr';
+        
+        sidebarText.forEach( text => {
+            text.classList.add("hidden")
+        })
+        
+        // Housekeeping
+        sidebar.classList.remove("opened"); 
+    }
+    else {
+        sidebar.style['width'] = '250px';
+        container.style['grid-template-columns'] = '250px 3fr 1fr';
+        
+        sidebarText.forEach( text => {
+            text.classList.remove("hidden")
+        })
+
+        // Housekeeping
+        sidebar.classList.add("opened");
+    }
+}
+
+// Content loading
+
 const main = document.querySelector(".cards-container");
 
 for (i = 0; i < cards.length; i++) {
@@ -10,11 +43,13 @@ for (i = 0; i < cards.length; i++) {
             <p class="card-name">${cards[i].name}</p>
             <p class="card-author">${cards[i].postUser}</p>
         </div>
-        <div class="card-rating">
-            <div class="rating-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" /></svg>
+        <div class="card-rating-container">
+            <div class="card-rating">
+                <div class="rating-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" /></svg>
+                </div>
+                <p class="rating">${cards[i].rating}</p>
             </div>
-            <p class="rating">${cards[i].rating}</p>
             <p class="num-ratings">(${cards[i].numRatings})</p>
         </div>
     </div>
@@ -66,7 +101,7 @@ for (i = 0; i < trending.length; i++) {
     <div class="trending-content">
         <div class="trending-txt">
             <p class="trending-name">${trending[i].name}</p>
-            <p class="trending-desc">${trending[i].votes} Votes</p>
+            <p class="trending-desc">${trending[i].votes} Submissions</p>
         </div>
         <div class="trending-refer">
             <button><span>Find Out More</span></button>

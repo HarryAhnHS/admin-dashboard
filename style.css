@@ -14,6 +14,10 @@
     --main-color: #123123;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     font-family: 'Outfit', 'Play', 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
@@ -32,28 +36,55 @@ img {
 .container {
     display: grid;
     height: calc(100vh + 100px);
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 250px 3fr 1fr;
     grid-template-rows: 120px 40px auto 100px;
+
+    transition: 0.5s;
 }
 
 /* Sidebar */
 
 .sidebar {
     background-color: #991b1b;
-    grid-area: 1/1/4/2; 
+    
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+
     display: flex;
     flex-direction: column;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.open-close {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.openbtn {
+    font-size: 36px;
+    text-decoration: none;
+    color: white;
 }
 
 .logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     height: 120px;
     box-sizing: border-box;
-    padding-right: 15px;
 }
 
 .logo p {
@@ -240,8 +271,9 @@ img {
 .cards-container {
     grid-area: 3/2/4/3;
     overflow-y: scroll;
+    overflow-x: hidden;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
     gap: 15px;
     padding: 15px;
     /* background-color: #fef2f2; */
@@ -271,6 +303,9 @@ img {
     object-fit: cover;
     min-width: 100%;
     min-height: 100%;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 /* Card Title + Review Styling */
@@ -305,11 +340,19 @@ img {
     margin: 0;
 }
 
-.card-rating {
+.card-rating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 35%;
+}
+
+.card-rating {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    height: 25px;
 }
 
 .rating-icon {
@@ -326,6 +369,7 @@ img {
 .num-ratings {
     font-size: 10px;
     padding-left: 5px;
+    margin: 0;
 }
 
 
@@ -452,7 +496,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 15px;
+    padding-left: 5px;
 }
 
 .trending-head h1 {
@@ -467,6 +511,25 @@ img {
     font-style: italic;
     margin: 0;
 }
+
+/* Hidden trending-head for mobile query */
+.trending-head-media {
+    display: none;
+}
+
+.trending-head-media h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.trending-head-media p {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+}
+
 
 /* Individual trending cards */
 
@@ -509,6 +572,7 @@ img {
 
     padding-left: 10px;
     padding-top: 10px;
+    padding-right: 5px;
 }
 
 .trending-name {
@@ -609,13 +673,15 @@ img {
 
 /* Footer */
 .footer {
-    grid-area: 4/1/5/4;
+    grid-area: 4/2/5/4;
     background-color: white;
     color: black;
     padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: 12px;
 }
 
 .github-logo {
@@ -635,6 +701,73 @@ img {
 .github-a img:hover {
     opacity: 1;
     transform: rotate(360deg) scale(1.2);
+}
+
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Smaller Desktop */
+@media only screen and (max-width: 910px) {
+    .container {
+        display: grid;
+        height: calc(100vh + 600px + 100px);
+        grid-template-columns: 250px 3fr 1fr;
+        grid-template-rows: 120px 40px auto 100px 315px 100px;
+    }
+
+    .header p {
+        font-size: 24px;
+    }
+
+    .sidebar {
+        grid-area: 1/1/6/2; 
+    }
+
+    .content-topbar {
+        grid-area: 2/2/3/4;
+
+    }
+
+    .cards-container {
+        grid-area: 3/2/4/4;
+    }
+
+    .trending-container {
+        grid-area: 5/2/6/4;
+
+        height: 300px;
+
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+        padding-bottom: 15px;
+    }
+
+    .trending-head {
+        display: none;
+    }
+
+    .trending-head-media {
+        display: flex;
+        grid-area: 4/2/5/4;
+        padding-top: 50px;
+    }
+
+    .trending-card {
+        height: 120px;
+        margin: 10px 5px;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .footer {
+        grid-area: 6/2/7/4;
+    }
+
 }
 
 
