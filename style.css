@@ -277,7 +277,7 @@ img {
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(281px, 1fr));
     gap: 15px;
     padding: 15px;
     /* background-color: #fef2f2; */
