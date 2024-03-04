@@ -3,6 +3,7 @@ const sidebar = document.querySelector(".sidebar");
 const container = document.querySelector(".container");
 const sidebarToggle = document.querySelector(".openbtn");
 const sidebarText = document.querySelectorAll(".sidebarText");
+const logoIcon = document.querySelector("#logo-icon");
 
 function toggleSidebar() {
     if (sidebar.classList.contains("opened")) {
@@ -12,24 +13,53 @@ function toggleSidebar() {
         sidebarText.forEach( text => {
             text.classList.add("hidden")
         })
+
+        logoIcon.style['padding-right'] = '0px';
         
         // Housekeeping
         sidebar.classList.remove("opened"); 
     }
     else {
-        sidebar.style['width'] = '250px';
-        container.style['grid-template-columns'] = '250px 3fr 1fr';
+        sidebar.style['width'] = '230px';
+        container.style['grid-template-columns'] = '230px 3fr 1fr';
         
         sidebarText.forEach( text => {
             text.classList.remove("hidden")
         })
+
+        logoIcon.style['padding-right'] = '15px';
 
         // Housekeeping
         sidebar.classList.add("opened");
     }
 }
 
-// Content loading
+// Media Query to auto toggle sidebar at 800px
+function autoToggleSidebar(x) {
+    if (x.matches) { // If media query matches
+        if (sidebar.classList.contains("opened")) {
+            toggleSidebar();
+        }
+    } else {
+        if (!sidebar.classList.contains("opened")) {
+            toggleSidebar();
+        }
+    }
+  }
+  // Create a MediaQueryList object
+  var x = window.matchMedia("(max-width: 800px)")
+  
+  // Call listener function at run time
+  autoToggleSidebar(x);
+  
+  // Attach listener function on state changes
+  x.addEventListener("change", function() {
+    autoToggleSidebar(x);
+  });
+
+
+
+// Card Content loading
 
 const main = document.querySelector(".cards-container");
 
