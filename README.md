@@ -1,18 +1,22 @@
 # admin-dashboard
 
-RepMe
+# RepMe - Workout and exercise regimen social platform. This project is the front-end design of the main dashboard. Created dummy back-end structure with randomized user content. Lacking real functionality - saving for later project. 
 
-Dashboard:
+✅ Dashboard Content:
 - Name of Split
-- Keywords
-- Male/Female
+- Tags
 - Intensity
 - Num of Days in Split
-- Rating
-- Optional videos for sets
-- Approx time per day
+- Rating, Num Rating
+- Approx time
 
-Search bar, Sort, Filter
+✅ Search bar, Sort Design
 
-Right content -  Live challenges: Users can participate in challenges such as "30-Day Squat Challenge" or "Bench Press PR Challenge" and share their progress with the community.
+✅ Users can participate in trending workouts and share their progress with the community.
+
+✅ Open/close sidebar with hamburger icon
+
+✅ Mobile responsiveness
+
+
 
